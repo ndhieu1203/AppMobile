@@ -10,6 +10,8 @@ import {
   DrawerItem,
 } from '@react-navigation/drawer';
 
+import List from './src/stackScreen/flatList'
+
 function HomeScreen({ navigation }) {
   return (
     <ScrollView>
@@ -18,12 +20,15 @@ function HomeScreen({ navigation }) {
         <View style={Styles.element}>
           <View style={Styles.item}>
             <View style={Styles.itemDich}>
-
+            <Button
+              title='Chào hỏi'
+              onPress={()=>navigation.navigate('List')}
+            />
             </View>
           </View>
           <View style={Styles.item}>
             <View style={Styles.itemConso}>
-
+            <Text>Icon 2</Text>
             </View>
           </View>
           <View style={Styles.item}>
@@ -82,7 +87,7 @@ function HomeScreen({ navigation }) {
         </View>
 
         <View style={Styles.element}>
-        <View style={Styles.item}>
+          <View style={Styles.item}>
             <View style={Styles.itemDich}>
 
             </View>
@@ -159,8 +164,8 @@ function App() {
             headerLeft: () => (
               <Button
                 onPress={() => alert('This is a button!')}
-                title="Info"
-                color="#fff"
+                title="Menu"
+                color="#008000"
               />
             ),
             headerRight: () => (
@@ -171,6 +176,12 @@ function App() {
               />
             )
           }}
+        />
+
+        <Stack.Screen
+          name="List"
+          component={List}
+          options={{title: 'Fast sentence'}}
         />
       </Stack.Navigator>
     </NavigationContainer>

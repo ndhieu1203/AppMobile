@@ -41,7 +41,7 @@ const PreNav = ({ navigation }) =>
           <Icon.Button
             name="bars"
             backgroundColor="#008000"
-            size ={25}
+            size ={23}
             onPress={() => navigation.openDrawer()}
           >
           </Icon.Button>

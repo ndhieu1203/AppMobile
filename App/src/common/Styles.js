@@ -11,7 +11,7 @@ const Styles = {
     item: {
         width: "100%",
         height: 135,
-        backgroundColor:'white',
+        backgroundColor:'black',
         alignItems: 'center',
         justifyContent: 'center'
     },
@@ -19,13 +19,13 @@ const Styles = {
         width: "40%",
         height: "40%",
         borderRadius: 100,
-        backgroundColor: 'green'
+        backgroundColor: '#'
     },
     itemConso: {
         width: "40%",
         height: "40%",
         borderRadius: 100,
-        backgroundColor: 'red'
+        backgroundColor: 'green'
     }
 };
 

@@ -18,11 +18,14 @@ export default function HomeScreen({ navigation }) {
   
           <View style={Styles.element}>
             <View style={Styles.item}>
-              <View style={Styles.itemDich}>
+              <View style={Styles.itemConso}>
                 <Icon.Button
                   onPress={() => navigation.navigate('List')}
                   name = "rocket"
-                >Struct
+                  backgroundColor = "black"
+                  color = "green"
+                  borderRadius = {50}
+                > 
                 </Icon.Button>
               </View>
             </View>
@@ -55,7 +58,7 @@ export default function HomeScreen({ navigation }) {
   
           <View style={Styles.element}>
             <View style={Styles.item}>
-              <View style={Styles.itemDich}>
+              <View style={Styles.itemConso}>
   
               </View>
             </View>
@@ -88,7 +91,7 @@ export default function HomeScreen({ navigation }) {
   
           <View style={Styles.element}>
             <View style={Styles.item}>
-              <View style={Styles.itemDich}>
+              <View style={Styles.itemConso}>
   
               </View>
             </View>
@@ -142,15 +145,10 @@ export default function HomeScreen({ navigation }) {
         alignItems: 'center',
         justifyContent: 'center'
     },
-    itemDich: {
-        width: "40%",
-        height: "40%",
-        borderRadius: 100,
-        backgroundColor: 'green'
-    },
+
     itemConso: {
-        width: "40%",
-        height: "40%",
+        width: "60%",
+        height: "60%",
         borderRadius: 100,
         backgroundColor: 'red'
     }

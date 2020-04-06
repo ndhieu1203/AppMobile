@@ -11,180 +11,68 @@ import {
 } from '@react-navigation/drawer';
 
 import List from './src/stackScreen/flatList'
-
-function HomeScreen({ navigation }) {
-  return (
-    <ScrollView>
-      <View style={Styles.container}>
-
-        <View style={Styles.element}>
-          <View style={Styles.item}>
-            <View style={Styles.itemDich}>
-            <Button
-              title='Chào hỏi'
-              onPress={()=>navigation.navigate('List')}
-            />
-            </View>
-          </View>
-          <View style={Styles.item}>
-            <View style={Styles.itemConso}>
-            <Text>Icon 2</Text>
-            </View>
-          </View>
-          <View style={Styles.item}>
-            <View style={Styles.itemConso}>
-
-            </View>
-          </View>
-          <View style={Styles.item}>
-            <View style={Styles.itemConso}>
-
-            </View>
-          </View>
-          <View style={Styles.item}>
-            <View style={Styles.itemConso}>
-
-            </View>
-          </View>
-          <View style={Styles.item}>
-            <View style={Styles.itemConso}>
-
-            </View>
-          </View>
-        </View>
-
-        <View style={Styles.element}>
-        <View style={Styles.item}>
-            <View style={Styles.itemDich}>
-
-            </View>
-          </View>
-          <View style={Styles.item}>
-            <View style={Styles.itemConso}>
-
-            </View>
-          </View>
-          <View style={Styles.item}>
-            <View style={Styles.itemConso}>
-
-            </View>
-          </View>
-          <View style={Styles.item}>
-            <View style={Styles.itemConso}>
-
-            </View>
-          </View>
-          <View style={Styles.item}>
-            <View style={Styles.itemConso}>
-
-            </View>
-          </View>
-          <View style={Styles.item}>
-            <View style={Styles.itemConso}>
-
-            </View>
-          </View>
-        </View>
-
-        <View style={Styles.element}>
-          <View style={Styles.item}>
-            <View style={Styles.itemDich}>
-
-            </View>
-          </View>
-          <View style={Styles.item}>
-            <View style={Styles.itemConso}>
-
-            </View>
-          </View>
-          <View style={Styles.item}>
-            <View style={Styles.itemConso}>
-
-            </View>
-          </View>
-          <View style={Styles.item}>
-            <View style={Styles.itemConso}>
-
-            </View>
-          </View>
-          <View style={Styles.item}>
-            <View style={Styles.itemConso}>
-
-            </View>
-          </View>
-          <View style={Styles.item}>
-            <View style={Styles.itemConso}>
-
-            </View>
-          </View>
-        </View>
-
-      </View>
-    </ScrollView>
-  );
-}
-
-function CustomDrawerContent(props) {
-  return (
-    <DrawerContentScrollView {...props}>
-      <DrawerItemList {...props} />
-      <DrawerItem label="Help" onPress={() => alert('Link to help')} />
-    </DrawerContentScrollView>
-  );
-}
-
-const Drawer = createDrawerNavigator();
-
-function MyDrawer() {
-  return (
-    <Drawer.Navigator drawerContent={props => <CustomDrawerContent {...props} />}>
-      
-    </Drawer.Navigator>
-  );
-}
+import HomeScreen from './src/stackScreen/homescreen'
+import Icon from 'react-native-vector-icons/FontAwesome';
+const myIcon = <Icon name="rocket" size={30} color="#900" />;
 
 const Stack = createStackNavigator();
+const Drawer = createDrawerNavigator();
+
+const PreNav = ({ navigation }) =>
+  <Stack.Navigator initialRouteName="Home">
+    <Stack.Screen
+      name="TIẾNG ANH GIAO TIẾP"
+      component={HomeScreen}
+      options={{
+        title: 'Tiếng Anh Giao Tiếp',
+        headerStyle: {
+          backgroundColor: 'green',
+        },
+        headerTintColor: '#fff',
+        headerTitleStyle: {
+          fontWeight: 'bold',
+        },
+        headerLeft: () => (
+          // <Button
+          //   onPress={() => navigation.openDrawer()}
+          //   title="menu"
+          //   color="#008000"
+          // />
+          <Icon.Button
+            name="bars"
+            backgroundColor="#008000"
+            size ={25}
+            onPress={() => navigation.openDrawer()}
+          >
+          </Icon.Button>
+        ),
+        headerRight: () => (
+          <Button
+            onPress={() => alert('This is a button!')}
+            title="Info"
+            color="#008000"
+          />
+        )
+      }}
+    />
+    <Stack.Screen
+      name="List"
+      component={List}
+      options={{ title: 'Fast sentence' }}
+    />
+  </Stack.Navigator>
+
 
 function App() {
   return (
-    <NavigationContainer>
-      <Stack.Navigator initialRouteName="Home">
-        <Stack.Screen 
-          name="TIẾNG ANH GIAO TIẾP" 
-          component={HomeScreen} 
-          options={{
-            title: 'Tiếng Anh Giao Tiếp',
-            headerStyle: {
-              backgroundColor: 'green',
-            },
-            headerTintColor: '#fff',
-            headerTitleStyle: {
-              fontWeight: 'bold',
-            },
-            headerLeft: () => (
-              <Button
-                onPress={() => alert('This is a button!')}
-                title="Menu"
-                color="#008000"
-              />
-            ),
-            headerRight: () => (
-              <Button
-                onPress={() => alert('This is a button!')}
-                title="Info"
-                color="#fff"
-              />
-            )
-          }}
-        />
 
-        <Stack.Screen
-          name="List"
-          component={List}
-          options={{title: 'Fast sentence'}}
-        />
-      </Stack.Navigator>
+    <NavigationContainer>
+      <Drawer.Navigator>
+        <Drawer.Screen name="Home" component={PreNav}  />
+        <Drawer.Screen name="Structs" component={List} />
+      </Drawer.Navigator>
     </NavigationContainer>
+
   );
 }
 

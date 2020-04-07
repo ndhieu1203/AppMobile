@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Button, View, Text, ScrollView } from 'react-native';
+import { Button, View, Text, ScrollView, Image } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { Styles } from './src/common';
@@ -15,6 +15,7 @@ import HomeScreen from './src/stackScreen/homescreen'
 import Icon from 'react-native-vector-icons/FontAwesome';
 const myIcon = <Icon name="rocket" size={30} color="#900" />;
 
+// 
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
 
@@ -62,6 +63,13 @@ const PreNav = ({ navigation }) =>
     />
   </Stack.Navigator>
 
+function Img(){
+  return (
+    <View>
+      <Image source={require('./src/image/huanhoahong-1_ugww.jpg')} style={{width: 400, height: 400}} />
+    </View>
+  );
+}
 
 function App() {
   return (
@@ -69,7 +77,9 @@ function App() {
     <NavigationContainer>
       <Drawer.Navigator>
         <Drawer.Screen name="Home" component={PreNav}  />
+        <Drawer.Screen name="Profile" component={Img} />
         <Drawer.Screen name="Structs" component={List} />
+        
       </Drawer.Navigator>
     </NavigationContainer>
 

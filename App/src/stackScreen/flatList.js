@@ -34,6 +34,7 @@ export default class List extends Component {
                         { key: 'Phone' },
                     ]}
                     renderItem={({ item }) => <View style={styles.item}>
+                    
                         <Text style={styles.wordSize}> {item.key} </Text>
                     </View>}
                 />

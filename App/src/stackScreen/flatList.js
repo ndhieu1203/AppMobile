@@ -3,11 +3,13 @@ import { Button, View, Text, FlatList, StyleSheet } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { ScrollView } from 'react-native-gesture-handler';
+import { SearchBar } from 'react-native-elements';
 
 
 export default class List extends Component {
 
     render() {
+
         return (
             <View style={styles.container}>
                 <FlatList
@@ -33,13 +35,12 @@ export default class List extends Component {
                         { key: 'Draw' },
                         { key: 'Phone' },
                     ]}
-                    renderItem={({ item }) => <View style={styles.item}>
-                    
-                        <Text style={styles.wordSize}> {item.key} </Text>
+                    renderItem={({ item }) => <View style={styles.item}><Text style={styles.wordSize}> {item.key} </Text>
                     </View>}
                 />
 
             </View>
+
         );
     }
 }
@@ -50,7 +51,7 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         padding: 3,
-        backgroundColor: '#dcdcdc'
+        backgroundColor: 'white'
     },
 
     wordSize: {
@@ -59,9 +60,10 @@ const styles = StyleSheet.create({
 
     item: {
         padding: 10,
-        margin: 3,
-        backgroundColor: '#f0fff0',
-        borderRadius: 4
+        margin: 4,
+        backgroundColor: 'whitesmoke',
+        borderRadius: 4,
+
     }
 });
 

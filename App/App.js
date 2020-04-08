@@ -12,6 +12,7 @@ import {
 
 import List from './src/stackScreen/flatList'
 import HomeScreen from './src/stackScreen/homescreen'
+import ChaoHoi from './src/stackScreen/chaohoi'
 import Icon from 'react-native-vector-icons/FontAwesome';
 const myIcon = <Icon name="rocket" size={30} color="#900" />;
 
@@ -34,11 +35,6 @@ const PreNav = ({ navigation }) =>
           fontWeight: 'bold',
         },
         headerLeft: () => (
-          // <Button
-          //   onPress={() => navigation.openDrawer()}
-          //   title="menu"
-          //   color="#008000"
-          // />
           <Icon.Button
             name="bars"
             backgroundColor="#008000"
@@ -60,6 +56,12 @@ const PreNav = ({ navigation }) =>
       name="List"
       component={List}
       options={{ title: 'Fast sentence' }}
+    />
+
+    <Stack.Screen
+      name= "ChaoHoi"
+      component={ChaoHoi}
+      options={{title: 'Chào hỏi'}}
     />
   </Stack.Navigator>
 

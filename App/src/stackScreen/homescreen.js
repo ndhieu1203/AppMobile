@@ -2,7 +2,8 @@ import * as React from 'react';
 import { Button, View, Text, ScrollView } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import Icon from 'react-native-vector-icons/FontAwesome';
+import { Icon } from 'react-native-elements'
+
 
 const myIcon = <Icon name="rocket" size={30} color="#900" />;
 import {
@@ -14,6 +15,7 @@ import {
 import { BorderlessButton } from 'react-native-gesture-handler';
 
 export default function HomeScreen({ navigation }) {
+
     return (
       <ScrollView>
         <View style={Styles.container}>
@@ -21,86 +23,86 @@ export default function HomeScreen({ navigation }) {
           <View style={Styles.element}>
             <View style={Styles.item}>
               <View style={Styles.itemConso}>
-                <Icon.Button
-                  onPress={() => navigation.navigate('List')}
-                  name = "search"
-                  color = "lightsteelblue"
-                  iconStyle = {{marginLeft: 13 }}
-                  backgroundColor = "white"
-                  size = {45}
-                  borderRadius = {100}
-                >
-                </Icon.Button>
+                <Icon
+                    //reverse='true' đảo màu nền
+                    underlayColor='#E6E6E6'
+                    name='search'
+                    type='material'
+                    color='#58D3F7'
+                    onPress={() => navigation.navigate('List')}
+                    size = {50}
+                />
                 <Text style={Styles.buttonName}>Tìm kiếm</Text>
               </View>
             </View>
             <View style={Styles.item}>
               <View style={Styles.itemConso}>
-                <Icon.Button
-                  name = "handshake-o"
-                  color = "black"
-                  iconStyle = {{marginLeft: 9 }}
-                  backgroundColor = "white"
-                  size = {45}
-                  borderRadius = {100}
-                ></Icon.Button>
+              <Icon
+                    //reverse='true' đảo màu nền
+                    underlayColor='#E6E6E6'
+                    name='handshake-o'
+                    type='font-awesome'
+                    color='#0080FF'
+                    onPress={() => navigation.navigate('List')}
+                    size = {50}
+                />
                 <Text style={Styles.buttonName}>Chào hỏi</Text>
               </View>
             </View>
             <View style={Styles.item}>
               <View style={Styles.itemConso}>
-              <Icon.Button
-                  name = "map"
-                  color = "darkkhaki"
-                  iconStyle = {{marginLeft: 20 }}
-                  backgroundColor = "white"
-                  size = {45}
-                  borderRadius = {100}
-                ></Icon.Button>
+              <Icon
+                    //reverse='true' đảo màu nền
+                    underlayColor='#E6E6E6'
+                    name='map'
+                    type='font-awesome'
+                    color='#61210B'
+                    onPress={() => navigation.navigate('List')}
+                    size = {50}
+                />
                 <Text style={Styles.buttonName}>Địa phương</Text>
               </View>
             </View>
             <View style={Styles.item}>
               <View style={Styles.itemConso}>
-              <Icon.Button
-                  name = "calendar"
-                  color = "chocolate"
-                  iconStyle = {{marginLeft: 20 }}
-                  backgroundColor = "white"
-                  size = {45}
-                  borderRadius = {100}
-                ></Icon.Button>
+              <Icon
+                    //reverse='true' đảo màu nền
+                    underlayColor='#E6E6E6'
+                    name='alarm'
+                    type='material'
+                    color='#424242'
+                    onPress={() => navigation.navigate('List')}
+                    size = {50}
+                />
                 <Text style={Styles.buttonName}>Thời gian</Text>
               </View>
             </View>
             <View style={Styles.item}>
               <View style={Styles.itemConso}>
-              <Icon.Button
-                  onPress={() => navigation.navigate('List')}
-                  name = "car"
-                  color = "gold"
-                  iconStyle = {{marginLeft: 12 }}
-                  backgroundColor = "white"
-                  size = {45}
-                  borderRadius = {100}
-                >
-                </Icon.Button>
+              <Icon
+                    //reverse='true' đảo màu nền
+                    underlayColor='#E6E6E6'
+                    name='motorcycle'
+                    type='font-awesome'
+                    color='#3B240B'
+                    onPress={() => navigation.navigate('List')}
+                    size = {50}
+                />
                 <Text style={Styles.buttonName}>Xe cộ</Text>
               </View>
             </View>
             <View style={Styles.item}>
               <View style={Styles.itemConso}>
-              <Icon.Button
-                  onPress={() => navigation.navigate('List')}
-                  name = "wechat"
-                  color = "dodgerblue"
-                  iconStyle = {{marginLeft: 11 }}
-                  backgroundColor = "white"
-                  size = {45}
-                  borderRadius = {100}
-                >
-                </Icon.Button>
-                <Text style={Styles.buttonName}>Trò Chuyện</Text>
+              <Icon
+                    //reverse='true' đảo màu nền
+                    underlayColor='#E6E6E6'
+                    name='wechat'
+                    type='font-awesome'
+                    color='#0080FF'
+                    onPress={() => navigation.navigate('List')}
+                    size = {50}
+                />
+                <Text style={Styles.buttonName}>Trò chuyện</Text>
               </View>
             </View>
           </View>
@@ -108,91 +110,85 @@ export default function HomeScreen({ navigation }) {
           <View style={Styles.element}>
             <View style={Styles.item}>
               <View style={Styles.itemConso}>
-              <Icon.Button
-                  onPress={() => navigation.navigate('List')}
-                  name = "home"
-                  color = "firebrick"
-                  iconStyle = {{marginLeft: 20 }}
-                  backgroundColor = "white"
-                  size = {45}
-                  borderRadius = {100}
-                >
-                </Icon.Button>
+              <Icon
+                    //reverse='true' đảo màu nền
+                    underlayColor='#E6E6E6'
+                    name='ios-home'
+                    type='ionicon'
+                    color='#8A0808'
+                    onPress={() => navigation.navigate('List')}
+                    size = {50}
+                />
                 <Text style={Styles.buttonName}>Nhà cửa</Text>
               </View>
             </View>
             <View style={Styles.item}>
               <View style={Styles.itemConso}>
-              <Icon.Button
-                  onPress={() => navigation.navigate('List')}
-                  name = "gamepad"
-                  color = "midnightblue"
-                  iconStyle = {{marginLeft: 20 }}
-                  backgroundColor = "white"
-                  size = {45}
-                  borderRadius = {100}
-                >
-                </Icon.Button>
+              <Icon
+                    //reverse='true' đảo màu nền
+                    underlayColor='#E6E6E6'
+                    name='game-controller'
+                    type='entypo'
+                    color='#0B2161'
+                    onPress={() => navigation.navigate('List')}
+                    size = {50}
+                />
                 <Text style={Styles.buttonName}>Giải trí</Text>
               </View>
             </View>
             <View style={Styles.item}>
               <View style={Styles.itemConso}>
-              <Icon.Button
-                  onPress={() => navigation.navigate('List')}
-                  name = "train"
-                  color = "red"
-                  iconStyle = {{marginLeft: 20 }}
-                  backgroundColor = "white"
-                  size = {45}
-                  borderRadius = {100}
-                >
-                </Icon.Button>
-                <Text style={Styles.buttonName}>Giao Thông</Text>
+              <Icon
+                    //reverse='true' đảo màu nền
+                    underlayColor='#E6E6E6'
+                    name='traffic'
+                    type='material'
+                    color='red'
+                    onPress={() => navigation.navigate('List')}
+                    size = {50}
+                />
+                <Text style={Styles.buttonName}>Giao thông</Text>
               </View>
             </View>
             <View style={Styles.item}>
               <View style={Styles.itemConso}>
-              <Icon.Button
-                  onPress={() => navigation.navigate('List')}
-                  name = "smile-o"
-                  color = "goldenrod"
-                  iconStyle = {{marginLeft: 20 }}
-                  backgroundColor = "white"
-                  size = {45}
-                  borderRadius = {100}
-                >
-                </Icon.Button>
+              <Icon
+                    //reverse='true' đảo màu nền
+                    underlayColor='#E6E6E6'
+                    name='smiley'
+                    type='octicon'
+                    color='#FF8000'
+                    onPress={() => navigation.navigate('List')}
+                    size = {50}
+                />
                 <Text style={Styles.buttonName}>Cảm xúc</Text>
               </View>
             </View>
             <View style={Styles.item}>
               <View style={Styles.itemConso}>
-              <Icon.Button
-                  onPress={() => navigation.navigate('List')}
-                  name = "music"
-                  color = "purple"
-                  iconStyle = {{marginLeft: 20 }}
-                  backgroundColor = "white"
-                  size = {45}
-                  borderRadius = {100}
-                >
-                </Icon.Button>
+              <Icon
+                    //reverse='true' đảo màu nền
+                    underlayColor='#E6E6E6'
+                    name='music'
+                    type='font-awesome'
+                    color='#210B61'
+                    onPress={() => navigation.navigate('List')}
+                    size = {50}
+                />
                 <Text style={Styles.buttonName}>Âm nhạc</Text>
               </View>
             </View>
             <View style={Styles.item}>
               <View style={Styles.itemConso}>
-              <Icon.Button
-                  onPress={() => navigation.navigate('List')}
-                  name = "film"
-                  color = "indigo"
-                  iconStyle = {{marginLeft: 20 }}
-                  backgroundColor = "white"
-                  size = {45}
-                  borderRadius = {100}
-                >
-                </Icon.Button>
+              <Icon
+                    //reverse='true' đảo màu nền
+                    underlayColor='#E6E6E6'
+                    name='film'
+                    type='font-awesome'
+                    color='#4C0B5F'
+                    onPress={() => navigation.navigate('List')}
+                    size = {50}
+                />
                 <Text style={Styles.buttonName}>Phim</Text>
               </View>
             </View>
@@ -201,92 +197,86 @@ export default function HomeScreen({ navigation }) {
           <View style={Styles.element}>
             <View style={Styles.item}>
               <View style={Styles.itemConso}>
-              <Icon.Button
-                  onPress={() => navigation.navigate('List')}
-                  name = "book"
-                  color = "skyblue"
-                  iconStyle = {{marginLeft: 20 }}
-                  backgroundColor = "white"
-                  size = {45}
-                  borderRadius = {100}
-                >
-                </Icon.Button>
+              <Icon
+                    //reverse='true' đảo màu nền
+                    underlayColor='#E6E6E6'
+                    name='book'
+                    type='material'
+                    color='#01A9DB'
+                    onPress={() => navigation.navigate('List')}
+                    size = {50}
+                />
                 <Text style={Styles.buttonName}>Sách</Text>
               </View>
             </View>
             <View style={Styles.item}>
               <View style={Styles.itemConso}>
-              <Icon.Button
-                  onPress={() => navigation.navigate('List')}
-                  name = "map-marker"
-                  color = "maroon"
-                  iconStyle = {{marginLeft: 25 }}
-                  backgroundColor = "white"
-                  size = {45}
-                  borderRadius = {100}
-                >
-                </Icon.Button>
-                <Text style={Styles.buttonName}>Vị Trí</Text>
+              <Icon
+                    //reverse='true' đảo màu nền
+                    underlayColor='#E6E6E6'
+                    name='map-pin'
+                    type='feather'
+                    color='red'
+                    onPress={() => navigation.navigate('List')}
+                    size = {50}
+                />
+                <Text style={Styles.buttonName}>Vị trí</Text>
               </View>
             </View>
             <View style={Styles.item}>
               <View style={Styles.itemConso}>
-              <Icon.Button
-                  onPress={() => navigation.navigate('List')}
-                  name = "apple"
-                  color = "tomato"
-                  iconStyle = {{marginLeft: 20 }}
-                  backgroundColor = "white"
-                  size = {45}
-                  borderRadius = {100}
-                >
-                </Icon.Button>
+              <Icon
+                    //reverse='true' đảo màu nền
+                    underlayColor='#E6E6E6'
+                    name='apple'
+                    type='font-awesome'
+                    color='#AEB404'
+                    onPress={() => navigation.navigate('List')}
+                    size = {50}
+                />
                 <Text style={Styles.buttonName}>Hoa quả</Text>
               </View>
             </View>
             <View style={Styles.item}>
               <View style={Styles.itemConso}>
-              <Icon.Button
-                  onPress={() => navigation.navigate('List')}
-                  name = "dribbble"
-                  color = "orange"
-                  iconStyle = {{marginLeft: 20 }}
-                  backgroundColor = "white"
-                  size = {45}
-                  borderRadius = {100}
-                >
-                </Icon.Button>
+              <Icon
+                    //reverse='true' đảo màu nền
+                    underlayColor='#E6E6E6'
+                    name='soccer-ball-o'
+                    type='font-awesome'
+                    color='black'
+                    onPress={() => navigation.navigate('List')}
+                    size = {50}
+                />
                 <Text style={Styles.buttonName}>Thể thao</Text>
               </View>
             </View>
             <View style={Styles.item}>
               <View style={Styles.itemConso}>
-              <Icon.Button
-                  onPress={() => navigation.navigate('List')}
-                  name = "tree"
-                  color = "green"
-                  iconStyle = {{marginLeft: 20 }}
-                  backgroundColor = "white"
-                  size = {45}
-                  borderRadius = {100}
-                >
-                </Icon.Button>
+              <Icon
+                    //reverse='true' đảo màu nền
+                    underlayColor='#E6E6E6'
+                    name='trees'
+                    type='foundation'
+                    color='#088A08'
+                    onPress={() => navigation.navigate('List')}
+                    size = {50}
+                />
                 <Text style={Styles.buttonName}>Cây cối</Text>
               </View>
             </View>
             <View style={Styles.item}>
               <View style={Styles.itemConso}>
-              <Icon.Button
-                  onPress={() => navigation.navigate('List')}
-                  name = "paw"
-                  color = "brown"
-                  iconStyle = {{marginLeft: 20 }}
-                  backgroundColor = "white"
-                  size = {45}
-                  borderRadius = {100}
-                >
-                </Icon.Button>
-                <Text style={Styles.buttonName}>Động Vật</Text>  
+              <Icon
+                    //reverse='true' đảo màu nền
+                    underlayColor='#E6E6E6'
+                    name='baidu'
+                    type='entypo'
+                    color='#3B170B'
+                    onPress={() => navigation.navigate('List')}
+                    size = {50}
+                />
+                <Text style={Styles.buttonName}>Động vật</Text>  
               </View>
             </View>
           </View>
@@ -309,21 +299,24 @@ export default function HomeScreen({ navigation }) {
     },
     item: {
         width: "100%",
-        height: 135,
+        height: 125,
         backgroundColor:'white',
         alignItems: 'center',
         justifyContent: 'center'
     },
 
     itemConso: {
-        width: "70%",
-        height: "70%",
+        width: "80%",
+        height: "80%",
         borderRadius: 0,
         backgroundColor: 'white',
+        alignItems: 'center',
+        paddingTop: 20
     },
 
     buttonName: {
-      fontSize: 17,
+      marginTop : 7,
+      fontSize: 14,
       textAlign: "center"
     }
 };

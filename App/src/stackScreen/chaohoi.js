@@ -11,9 +11,10 @@ export default class ChaoHoi extends Component {
                     name='fire'
                     type='font-awesome'
                     color='red'
-                    onPress={() => alert('trái tim') }
+                    onPress={() => navigation.navigate('List')}
                     size = {40}
                 />
+                
             </View>
         );
     }

@@ -5,14 +5,6 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { Icon } from 'react-native-elements'
 import Search from './Search'
 
-
-const myIcon = <Icon name="rocket" size={30} color="#900" />;
-import {
-  createDrawerNavigator,
-  DrawerContentScrollView,
-  DrawerItemList,
-  DrawerItem,
-} from '@react-navigation/drawer';
 import { BorderlessButton } from 'react-native-gesture-handler';
 
 export default function HomeScreen({ navigation }) {

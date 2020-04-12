@@ -2,23 +2,26 @@ import * as React from 'react';
 import { Button, View, Text, ScrollView, Image } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import Animated from 'react-native-reanimated';
 
 import { Styles } from './src/common';
 import {
   createDrawerNavigator,
   DrawerContentScrollView,
+  DrawerContentComponentProps,
   DrawerItemList,
   DrawerItem,
+  DrawerContentOptions,
 } from '@react-navigation/drawer';
 
-
-import List from './src/stackScreen/flatList'
-import HomeScreen from './src/stackScreen/homescreen'
-import ChaoHoi from './src/stackScreen/chaohoi'
+import List from './src/Screen/flatList'
+import HomeScreen from './src/Screen/homescreen'
+import ChaoHoi from './src/Screen/chaohoi'
 import Icon from 'react-native-vector-icons/FontAwesome';
+import Search from './src/Screen/Search';
 
 
-// 
+
 const Stack = createStackNavigator();
 
 
@@ -61,37 +64,39 @@ const PreNav = ({ navigation }) =>
     />
 
     <Stack.Screen
-      name="ChaoHoi"
+      name="ChaoHoi" 
       component={ChaoHoi}
       options={{ title: 'Chào hỏi' }}
     />
   </Stack.Navigator>
 
-function Img() {
-  return (
-    <View>
-      <Image source={require('./src/image/huanhoahong-1_ugww.jpg')} style={{ width: 400, height: 400 }} />
-    </View>
-  );
-}
 
+import { OverrideDrawer } from './src/Screen/MyDrawer'
 const Drawer = createDrawerNavigator();
 
-
-
-
-function MyDrawer() {
+function MyDrawer(props) {
   return (
     <NavigationContainer>
       <Drawer.Navigator
-        drawerStyle={{
-        backgroundColor: '#c6cbef',
-        width: 300,
-  }}
-      >
-        <Drawer.Screen name="Home" component={PreNav} />
+        initialRouteName={PreNav}
+
+      //   drawerStyle={{
+      //     backgroundColor: 'white',
+      //     width: 280,
+      //   }}
+      //   drawerContentOptions={{
+      //   activeTintColor: '#b7f5ae',
+      //   itemStyle: { marginVertical: 5 },
+      //   activeBackgroundColor: 'green'
+      // }}
+
+      drawerContent={props=><OverrideDrawer {...props} />}
+        >
+        <Drawer.Screen name="Home" component={PreNav} options={{drawerIcon:({props})=><Icon name='home-outline' size={30}/>}}
+        />
+        {/*
         <Drawer.Screen name="Profile" component={ChaoHoi} />
-        <Drawer.Screen name="Structs" component={List} />
+        <Drawer.Screen name="Structs" component={List} /> */}
       </Drawer.Navigator>
     </NavigationContainer>
   );
@@ -100,6 +105,7 @@ function MyDrawer() {
 function App() {
   return (
     <MyDrawer />
+    
   );
 }
 

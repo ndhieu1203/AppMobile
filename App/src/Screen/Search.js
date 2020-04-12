@@ -22,7 +22,7 @@ export default class Search extends React.Component {
         inputContainerStyle={{backgroundColor: 'white', height: 40}}
         inputStyle = {{backgroundColor: 'white', fontSize: 18, padding: 3}}
         searchIcon = {{color: 'green', size: 30}}
-        round= 'true'
+        round= {true}
         
       />
     );

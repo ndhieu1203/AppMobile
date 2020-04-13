@@ -25,7 +25,7 @@ export default function HomeScreen({ navigation }) {
                   name='search'
                   type='material'
                   color='#58D3F7'
-                  onPress={() => navigation.navigate('List')}
+                  onPress={() => navigation.navigate('TimKiem')}
                   size={50}
                 />
                 <Text style={Styles.buttonName}>Tìm kiếm</Text>

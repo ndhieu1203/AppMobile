@@ -19,7 +19,7 @@ import HomeScreen from './src/Screen/homescreen'
 import ChaoHoi from './src/Screen/chaohoi'
 import Icon from 'react-native-vector-icons/FontAwesome';
 import Search from './src/Screen/Search';
-
+import TimKiem from './src/Screen/timkiem';
 
 
 const Stack = createStackNavigator();
@@ -67,6 +67,12 @@ const PreNav = ({ navigation }) =>
       name="ChaoHoi" 
       component={ChaoHoi}
       options={{ title: 'Chào hỏi' }}
+    />
+
+    <Stack.Screen
+      name="TimKiem" 
+      component={TimKiem}
+      options={{ title: 'Dịch' }}
     />
   </Stack.Navigator>
 

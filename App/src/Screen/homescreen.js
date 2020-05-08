@@ -53,7 +53,7 @@ export default function HomeScreen({ navigation }) {
                   name='map'
                   type='font-awesome'
                   color='#61210B'
-                  onPress={() => navigation.navigate('List')}
+                  onPress={() => navigation.navigate('DatabaseConponent')}
                   size={50}
                 />
                 <Text style={Styles.buttonName}>Địa phương</Text>

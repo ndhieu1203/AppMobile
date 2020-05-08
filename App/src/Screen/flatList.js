@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
 import { Button, View, Text, FlatList, StyleSheet } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
+
 import { ScrollView } from 'react-native-gesture-handler';
 import { SearchBar } from 'react-native-elements';
 
 
+//import firebase from '@react-native-firebase/database';
+
 export default class List extends Component {
 
     render() {
-
+        
         return (
             <View style={styles.container}>
                 <FlatList

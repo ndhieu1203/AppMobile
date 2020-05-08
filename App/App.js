@@ -20,6 +20,7 @@ import ChaoHoi from './src/Screen/chaohoi'
 import Icon from 'react-native-vector-icons/FontAwesome';
 import Search from './src/Screen/Search';
 import TimKiem from './src/Screen/timkiem';
+import DatabaseConponent from './src/Screen/databaseComponent';
 
 
 const Stack = createStackNavigator();
@@ -74,6 +75,12 @@ const PreNav = ({ navigation }) =>
       component={TimKiem}
       options={{ title: 'Dịch' }}
     />
+
+    <Stack.Screen
+      name="database"
+      component={DatabaseConponent}
+      options={{ title: 'databasecomponent' }}
+    />
   </Stack.Navigator>
 
 
@@ -85,24 +92,11 @@ function MyDrawer(props) {
     <NavigationContainer>
       <Drawer.Navigator
         initialRouteName={PreNav}
-
-      //   drawerStyle={{
-      //     backgroundColor: 'white',
-      //     width: 280,
-      //   }}
-      //   drawerContentOptions={{
-      //   activeTintColor: '#b7f5ae',
-      //   itemStyle: { marginVertical: 5 },
-      //   activeBackgroundColor: 'green'
-      // }}
-
-      drawerContent={props=><OverrideDrawer {...props} />}
+        drawerContent={props=><OverrideDrawer {...props} />}
         >
         <Drawer.Screen name="Home" component={PreNav} options={{drawerIcon:({props})=><Icon name='home-outline' size={30}/>}}
         />
-        {/*
-        <Drawer.Screen name="Profile" component={ChaoHoi} />
-        <Drawer.Screen name="Structs" component={List} /> */}
+
       </Drawer.Navigator>
     </NavigationContainer>
   );
@@ -111,7 +105,6 @@ function MyDrawer(props) {
 function App() {
   return (
     <MyDrawer />
-    
   );
 }
 
